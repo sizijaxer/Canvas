@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <title>canvas</title>
+</head>
+
+<body style="background-color: BlanchedAlmond;">
+    <canvas id="paper" width=1000 height=630 style="border:2px solid #000000;"></canvas>
+    </canvas>
+    <div class="row">
+        <input type="color" id="color_sel" value="#000000">
+        <input type="range" id="size" value = 6 name="size" min="3" max="50" onclick=resize()>
+    </div>
+    <div class="row">
+        <button id="pen" value ="pen" onclick=pen()><img src="image/brush_menu.png"> Pen </button>
+        <button id="eraser" value = "eraser" onclick=erase()><img src="image/eraser_menu.png"> Eraser </button>
+    </div>
+    <div class="row">
+        <button id="rectangle" value = "rectangle" onclick=draw_rectangle()><img src="image/rectangle_menu.png"> Rect </button>
+        <button id="triangle" value = "triangle" onclick=draw_triangle()><img src="image/triangle_menu.png"> Tria </button>
+        <button  id="cirle" value = "circle" onclick=draw_circle()><img src="image/circle_menu.png"> Circle </button>
+    </div>
+    <div id="edit" class="row">
+        <button id="text" value="text" onclick=create_txt()><img src="image/text_menu.png"> Text </button>
+    </div>
+    <div class="dropdown">
+        <button onclick="select_size()" class="dropbtn"><img src="image/text_size.png"> Size</button>
+            <div id="text_size" class="dropdown-content">
+                <button value="18" id="text_18" onclick=size_18()>18</button>
+                <button value="30" id="text_30" onclick=size_30()>30</button>
+                <button value="40" id="text_40" onclick=size_40()>40</button>
+                <button value="50" id="text_50" onclick=size_50()>50</button>
+            </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="select_font()" class="dropbtn"><img src="image/text_font.png"> Font</button>
+            <div id="text_font" class="dropdown-content">
+                <button  id="normal" onclick=set_font_normal()>normal</button>
+                <button  id="Arial" onclick=set_font_Arial()>Arial</button>
+                <button  id="Fantasy" onclick=set_font_Fantasy()>Fantasy</button>
+                <button  id="Comic Sans MS" onclick=set_font_Comic()>Comic</button>
+            </div>
+    </div>
+    <div class="row">
+        <button  id="undo" value = "undo" onclick=undo()><img src="image/undo.png"> Undo </button>
+        <button id="redo" value = "redo" onclick=redo()><img src="image/redo.png"> Redo </button>
+        <button  id="clear" value = "clear" onclick=rst()><img src="image/refresh.png"> Clear </button>
+    </div>
+    <div class="row">
+        <button id="download" value = "download" onclick=download()><img src="image/download.png"> Download</button>
+    </div>
+    <div class="row">
+        <input type="file" id="upload" accept="image/*" >
+    </div>
+    
+</body>
+<script src="canvas.js"></script>
+</html>
